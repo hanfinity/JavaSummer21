@@ -20,5 +20,16 @@ public class Kata {
       System.err.println("Arguments must be a number");
       System.exit(1) ;
     }
+
+
+  }
+
+
+  String compute(String input){
+    Integer valueOfInput = Integer.parseInt(input);
+    if(valueOfInput % 3 == 0){
+      return "Foo";
+    }
+    return null;
   }
 }
