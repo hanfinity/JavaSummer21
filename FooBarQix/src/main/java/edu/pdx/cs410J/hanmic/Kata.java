@@ -24,20 +24,24 @@ public class Kata {
 
   }
 
-
   String compute(String input){
     Integer valueOfInput = Integer.parseInt(input);
+    String toReturn = "";
     if(valueOfInput % 3 == 0){
-      return "Foo";
+      toReturn = "Foo";
     }
-    else if(valueOfInput % 5 == 0)
+    if(valueOfInput % 5 == 0)
     {
-      return "Bar";
+      toReturn += "Bar";
     }
-    else if(valueOfInput % 7 == 0)
+    if(valueOfInput % 7 == 0)
     {
-      return "Qix";
+      toReturn += "Qix";
     }
-    return null;
+    for (char num:
+         input.toCharArray()) {
+      if(num == '3') toReturn += "Foo";
+    }
+    return toReturn;
   }
 }
