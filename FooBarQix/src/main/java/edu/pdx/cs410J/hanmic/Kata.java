@@ -9,7 +9,16 @@ package edu.pdx.cs410J.hanmic;
 public class Kata {
 
   public static void main(String[] args) {
-    System.err.println("Missing command line arguments");
-    System.exit(1);
+    if(args.length == 0) {
+      System.err.println("Missing command line arguments");
+      System.exit(1);
+    }
+    String input = args[0];
+    try {
+      int number = Integer.parseInt(input);
+    } catch (NumberFormatException exc) {
+      System.err.println("Arguments must be a number");
+      System.exit(1) ;
+    }
   }
 }
