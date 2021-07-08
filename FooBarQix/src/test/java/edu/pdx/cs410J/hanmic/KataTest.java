@@ -22,11 +22,26 @@ public class KataTest
   }
 
   @Test
-  void computeIfGiven3WritesFoo(){
+  void computeIfGivenMultipleOf3ReturnsStringContainingFoo(){
     Kata test = new Kata();
     String testString = "3";
     String returnVal =  test.compute(testString);
     assertThat(returnVal, containsString("Foo"));
   }
 
+  @Test
+  void computeIfGivenMultipleOf5ReturnsStringContainingBar(){
+    Kata test = new Kata();
+    String testString = "5";
+    String returnVal =  test.compute(testString);
+    assertThat(returnVal, containsString("Bar"));
+  }
+
+  @Test
+  void computeIfGivenMultipleOf7ReturnsStringContainingQix(){
+    Kata test = new Kata();
+    String testString = "7";
+    String returnVal =  test.compute(testString);
+    assertThat(returnVal, containsString("Qix"));
+  }
 }

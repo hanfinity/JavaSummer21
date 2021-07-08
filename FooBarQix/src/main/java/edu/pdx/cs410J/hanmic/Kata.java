@@ -30,6 +30,14 @@ public class Kata {
     if(valueOfInput % 3 == 0){
       return "Foo";
     }
+    else if(valueOfInput % 5 == 0)
+    {
+      return "Bar";
+    }
+    else if(valueOfInput % 7 == 0)
+    {
+      return "Qix";
+    }
     return null;
   }
 }
