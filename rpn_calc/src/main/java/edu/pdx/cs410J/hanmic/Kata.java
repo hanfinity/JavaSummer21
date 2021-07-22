@@ -1,5 +1,9 @@
 package edu.pdx.cs410J.hanmic;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * A class for getting started with a code kata
  *
@@ -10,7 +14,19 @@ public class Kata {
                                                                                     
 
   public static void main(String[] args) {
-    System.err.println("Missing command line arguments");
-    System.exit(1);
+    if(args.length == 0) {
+      System.err.println("Missing command line arguments");
+      System.exit(1);
+    }
+
+    for (String arg : args) {
+      if(symbols.contains(arg)){
+        addSymbol(arg);
+      }else {
+        addNumber(arg);
+      }
+    }
+      // else error
   }
+
 }

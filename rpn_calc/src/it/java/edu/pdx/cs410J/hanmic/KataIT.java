@@ -21,5 +21,24 @@ class KataIT extends InvokeMainTestCase {
     assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
   }
 
+  @Test
+  void invokingMainWithValidArgumentsCalculatesAnswer() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "25", "5", "/" );
+    assertThat(result.getTextWrittenToStandardOut(), containsString("5"));
+
+  }
+
+  @Test
+  void providingOnlyNumbersPrintsError() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "5", "5", "5");
+    assertThat(result.getTextWrittenToStandardError(), containsString("Invalid Arguments, need to provide operators"));
+  }
+
+  @Test
+  void providingOnlyOperatorsPrintsError() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "/", "+", "-");
+    assertThat(result.getTextWrittenToStandardError(), containsString("Invalid Arguments, need to provide numbers."));
+  }
+
 
 }
